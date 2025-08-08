@@ -1,9 +1,8 @@
 {
-  "name": "reveal.js",
-  "version": "5.0.3",
-  "description": "The HTML Presentation Framework",
-  "homepage": "https://revealjs.com",
-  "subdomain": "revealjs",
+  "name": "open-spaces-slides",
+  "version": "1.0.0",
+  "description": "Interactive presentation about Open Spaces facilitation methodology",
+  "homepage": "https://github.com/jjasghar/open-spaces-slides",
   "main": "dist/reveal.js",
   "module": "dist/reveal.esm.js",
   "license": "MIT",
@@ -13,21 +12,25 @@
     "build": "gulp build"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "https://hakim.se"
+    "name": "JJ Asghar",
+    "email": "jj@asghar.us",
+    "web": "https://jjasghar.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/jjasghar/open-spaces-slides.git"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "keywords": [
-    "reveal",
-    "slides",
-    "presentation"
+    "open-spaces",
+    "facilitation",
+    "presentation", 
+    "conference",
+    "workshop",
+    "reveal-js",
+    "slides"
   ],
   "devDependencies": {
     "@babel/core": "^7.23.2",
