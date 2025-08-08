@@ -32,6 +32,10 @@ else
     echo "✅ Dependencies already installed"
 fi
 
+# Run a quick test to make sure everything is working
+echo "🔍 Running quick checks..."
+npm test
+
 echo ""
 echo "🚀 Starting presentation server..."
 echo "   The presentation will open at: http://localhost:8000"

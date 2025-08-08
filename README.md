@@ -56,6 +56,19 @@ npm install
 npm start
 ```
 
+### Testing & Building
+
+```bash
+# Run linting checks
+npm test
+
+# Build presentation assets
+npm run build
+
+# Run comprehensive tests (includes QUnit browser tests)
+npm run test:full
+```
+
 ### Customization
 
 - **Content**: Edit `index.html` to modify slides

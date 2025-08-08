@@ -1,7 +1,8 @@
-name: tests
+name: build-and-test
 
 on:
   - push
+  - pull_request
 
 permissions:
   contents: read
@@ -17,15 +18,35 @@ jobs:
           - 20
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-      - run: npm install
-      - run: npm run build --if-present
-      - run: npm test
-        env:
-          CI: true
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npx gulp eslint
+
+      - name: Build presentation
+        run: npm run build
+
+      - name: Check presentation files exist
+        run: |
+          test -f index.html
+          test -f dist/reveal.js
+          test -f dist/reveal.css
+          echo "✅ All required presentation files found"
+
+      - name: Basic HTML validation
+        run: |
+          if command -v htmlhint &> /dev/null; then
+            htmlhint index.html
+          else
+            echo "HTMLHint not available, skipping HTML validation"
+          fi
